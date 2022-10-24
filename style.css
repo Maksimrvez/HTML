@@ -1,6 +1,7 @@
 body {
     font-size: 20px;
     text-align: justify;
+
 }
 h1 {
     font-size: 40px;
@@ -8,4 +9,12 @@ h1 {
 }
 h2 {
     font-size: 30px;
+}
+table
+{
+    margin: auto;
+    background-color: aliceblue;
+}
+td {
+    text-align: center;
 }
