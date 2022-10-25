@@ -1,7 +1,7 @@
 body {
     font-size: 20px;
     text-align: justify;
-
+    
 }
 h1 {
     font-size: 40px;
@@ -13,8 +13,27 @@ h2 {
 table
 {
     margin: auto;
-    background-color: aliceblue;
+    background-color: rgb(186, 199, 210);
 }
 td {
     text-align: center;
+}
+.collored
+{
+    color: red;
+}
+#colorblue
+{
+    color: blue;
+}
+.yung
+{
+    color: red;
+}
+.google
+{
+    color: red;
+}
+.codeinf{
+    color: red;
 }
