@@ -1,14 +1,33 @@
 body {
-    font-size: 20px;
+    font-size: 16px;
     text-align: justify;
-    
+    font-family: Verdana, sans-serif;
+    color: #333;
+    line-height: 1.5;
+}
+P.blocktext {
+    margin-left: auto;
+    margin-right: auto;
+    width: 745px;
+}
+.img
+{
+    text-align: center;
+}
+.Citata
+{
+    text-align: center;
 }
 h1 {
     font-size: 40px;
     text-align: center;
+    color: #f03333;
+    line-height: 1.2;
 }
 h2 {
     font-size: 30px;
+    text-align: center;
+    color: #f03333;
 }
 table
 {
@@ -20,11 +39,8 @@ td {
 }
 .collored
 {
+
     color: red;
-}
-#colorblue
-{
-    color: blue;
 }
 .yung
 {
