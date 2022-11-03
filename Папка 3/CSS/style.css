@@ -37,15 +37,20 @@ body {
     margin-bottom: 50px;
 }
 
-.modules
+.section
 {
     margin-bottom: 50px;
-    display: inline-block;
-    padding: 24px 49px 24px 49px;
 }
-.Indest
+.link1
 {
-    margin-bottom: 50px;
     display: inline-block;
-    padding: 24px 49px 24px 49px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: 49px;
+    padding-right: 49px;
+    margin-right: 25px;
+}
+.link1:last-child
+{
+    margin-right: 0px;
 }
