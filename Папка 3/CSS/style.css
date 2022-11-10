@@ -21,6 +21,14 @@ body {
 	font-family: 'font', sans-serif;
 }
 
+.cont
+{
+margin: 0;
+ display: inline-block;
+ border-radius: 20px;
+ background-color: blueviolet;
+ margin-bottom: 40px;
+}
 .main-content
 {
     display: flex;
@@ -53,4 +61,64 @@ body {
 .link1:last-child
 {
     margin-right: 0px;
+}
+
+.container
+{
+  margin: 0 auto;
+  padding: 80px;
+  width: 1170px;
+}
+
+.img
+{
+  margin-bottom: 40px;
+}
+.container2
+{
+ position: relative;
+}
+.figure
+{
+    margin: 0;
+ display: inline-block;
+ margin-bottom: 40px;
+ width: 872px;
+}
+.Block
+{
+  padding: 30px;
+  margin-bottom: 40px;
+}
+.Block p {
+  margin-bottom: 10px;
+  width: 692px;
+}
+.li
+{
+  margin-bottom: 20px;
+}
+.li:last-child
+{
+  margin-bottom: 0px;
+}
+.ul, .ol
+{
+  padding-left: 15px;
+}
+.paragr
+{
+    margin: 0;
+margin-bottom: 40px;
+width: 872px;
+}
+.h2, .h3
+{
+    margin: 0;
+margin-bottom: 10px;
+}
+.h1
+{
+margin-bottom: 40px;
+width: 760px;
 }
