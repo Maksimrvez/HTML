@@ -25,8 +25,8 @@ body {
 {
 margin: 0;
  display: inline-block;
- border-radius: 20px;
- background-color: blueviolet;
+ border-radius: 10px;
+ background-color: gainsboro;
  margin-bottom: 40px;
 }
 .main-content
@@ -99,6 +99,7 @@ margin: 0;
 .li
 {
   margin-bottom: 20px;
+  color: blue;
 }
 .li:last-child
 {
@@ -106,13 +107,42 @@ margin: 0;
 }
 .ul, .ol
 {
-  padding-left: 15px;
+  padding-left: 30px;
 }
 .paragr
 {
     margin: 0;
 margin-bottom: 40px;
 width: 872px;
+}
+
+.dec{
+  height: 100px;
+  width: 150px;
+  margin-left: 780px;
+}
+
+.borderr
+{
+  text-align: center;
+  border-radius: 10px;
+  width: 900px;
+  height: 70px;
+  background-color: blue;
+  color: white;
+}
+.psoder
+{
+  margin: 0;
+  margin-bottom: 20px;
+  width: 872px;
+  margin-left: 20px;
+}
+.soder
+{
+  margin: 0;
+margin-bottom: 10px;
+padding-left: 22px;
 }
 .h2, .h3
 {
