@@ -15,22 +15,15 @@ a {
 
 img {
 	max-width: 100%;
+    
 }
 
 body {
-	font-family: 'font', sans-serif;
+    font-family: 'font', sans-serif;
+    font-family: Arial, Verdana, sans-serif;
 }
 
-.cont
-{
-margin: 0;
- display: inline-block;
- border-radius: 10px;
- background-color: gainsboro;
- margin-bottom: 40px;
-}
-.main-content
-{
+.main-content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,120 +33,165 @@ margin: 0;
     background-color: #070217;
 }
 
-.arada
-{
+.logo {
     margin-bottom: 50px;
 }
 
-.section
-{
+.section {
     margin-bottom: 50px;
+   
 }
-.link1
-{
-  border-radius: 0;
-  background-color: blue;
+
+.link1 {
     display: inline-block;
     padding-top: 24px;
     padding-bottom: 24px;
     padding-left: 49px;
     padding-right: 49px;
     margin-right: 25px;
+    font-weight: 700;
+    font-size: 18px;
+    background-color:  #3f2aff;
 }
-.link1:last-child
-{
+
+.link1:last-child {
     margin-right: 0px;
 }
 
-.container
-{
-  margin: 0 auto;
-  padding: 80px;
-  width: 1170px;
+.linkdownload {
+    font-weight: 700;
+    font-size: 18px;
+    color:  #3f2aff;
 }
 
-.img
-{
-  margin-bottom: 40px;
-}
-.container2
-{
- position: relative;
-}
-.figure
-{
-    margin: 0;
- display: inline-block;
- margin-bottom: 40px;
- width: 872px;
-}
-.Block
-{
-  padding: 30px;
-  margin-bottom: 40px;
-}
-.Block p {
-  margin-bottom: 10px;
-  width: 692px;
-}
-.li
-{
-  margin-bottom: 20px;
-  color: blue;
-}
-.li:last-child
-{
-  margin-bottom: 0px;
-}
-.ul, .ol
-{
-  padding-left: 30px;
-}
-.paragr
-{
-    margin: 0;
-margin-bottom: 40px;
-width: 872px;
+.ico {
+    padding-left: 30px;
+    background-image: url(../img/download.png);
+    background-position: left center;
+    background-repeat: no-repeat;
 }
 
-.dec{
-  height: 100px;
-  width: 150px;
-  margin-left: 780px;
+.container {
+    margin: 0 auto;
+    padding: 80px 0;
+    width: 1170px;
 }
 
-.borderr
-{
-  text-align: center;
-  border-radius: 10px;
-  width: 900px;
-  height: 70px;
-  background-color: blue;
-  color: white;
-}
-.psoder
-{
-  margin: 0;
-  margin-bottom: 20px;
-  width: 872px;
-  margin-left: 20px;
-}
-.soder
-{
-  margin: 0;
-margin-bottom: 10px;
-padding-left: 22px;
-}
-.h2, .h3
-{
+.p {
     margin: 0;
-margin-bottom: 10px;
+    margin-bottom: 40px;
+    width: 872px;
 }
-.h1
-{
-margin-bottom: 40px;
-width: 760px;
+
+.h1 {
+    margin: 0;
+    margin-bottom: 40px;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 60px;
+    color: #333;
 }
-.downl{ 
-margin-right: 15px;
-color: blue;}
+
+
+.grey .backgroundgrey {
+    border-radius: 20px;
+    padding: 30px;
+    background-color: #f3f3f3;
+    margin-bottom: 40px;
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+.grey:last-child {
+    margin-bottom: 0px;
+}
+
+.pgrey {
+    margin: 0;
+    margin-bottom: 10px;
+    width: 692px;
+}
+
+.pgrey2 {
+    border-radius: 20px;
+    padding: 95px 95px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 100%;
+    font-weight: 700;
+    font-size: 30px;
+    color: white;
+    background-color: #3f2aff;
+}
+
+.h2 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 40px;
+    line-height: 46px;
+    color: #333
+}
+
+.h3 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 34px;
+    color: #333;
+}
+
+.ul {
+    padding-left: 15px;
+    
+}
+
+.ullink {
+    border-bottom-width: 1px;
+    border-style:solid;
+    border-color: #3f2aff;
+    font-size: 20px;
+    color: #3f2aff
+}
+
+.li {
+    margin-bottom: 20px; 
+    
+}
+
+.li::marker {
+    color:#3f2aff;
+}
+
+.li:last-child {
+    margin-bottom: 0px;
+}
+
+.img {
+    margin-bottom: 40px;
+}
+
+.figure {
+    display: inline-block;
+    margin-bottom: 40px;
+    width: 872px;
+    font-size: 0;
+}
+
+.figure figcaption { 
+    
+    border-width: 1px;
+    border-style: solid;
+    border-color: #b6b6b6;
+    border-top: 0;
+    padding-top: 19px;
+    padding-bottom: 19px;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+}
+
+.backgroundgrey {
+    background-image: url(../img/decorate-1.png);
+    
+}
