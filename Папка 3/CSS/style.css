@@ -215,3 +215,75 @@ body {
     margin: 0;
   background-image: url(../img/decorate-2.png);
 }
+
+.fontik
+{
+    background-color: #f3f3f3;
+}
+.Osnova
+{
+    column-count: 2;
+}
+.Vedenie
+{
+    margin: 0;
+    text-align: unset;
+    padding-left: 15px;
+    background-color: #FFFFFF;
+    border-radius: 0px;
+    height: 325px;
+    width: 572px;
+    left: 0px;
+    top: 180px;
+}
+.hto
+{
+height: 46px;
+width: 194px;
+left: 25px;
+top: 205px;
+font-family: Arial;
+font-size: 40px;
+font-weight: 700;
+line-height: 46px;
+text-align: left;
+color: #3f2aff;
+
+}
+.ling
+{
+    width: 273px;
+    height: 33px;
+    left: 25px;
+    top: 253px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 165%;
+
+    color: #333333;
+}
+
+.backgron1
+{
+    margin: 0;
+    display: inline-block;
+    background-image: url(../img/pervi.png);
+}
+.backgron2{
+    margin: 0;
+    display: inline-block;
+    background-image: url(../img/vtoriy.png);
+}
+.backgron3{
+margin: 0;
+display: inline-block;
+background-image: url(../img/tretie.png);
+}
+.backgron4{
+margin: 0;
+display: inline-block;
+background-image: url(../img/chetveri.png);
+}
