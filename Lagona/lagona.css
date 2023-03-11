@@ -1,0 +1,784 @@
+body
+{
+    background: #E5E5E5;
+    font-family: 'Muller', sans-serif;
+}
+
+h2, h3 {
+    margin: 0;
+}
+
+article {
+    display: block;
+}
+
+.header{
+    display: block;
+}
+
+.container{
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.site-link{
+    transition: color .3s ease-in-out;
+    color: orange
+}
+
+.site-link:hover{
+    color:  #A47312;
+}
+
+.site-link:focus{
+    outline: none;
+    border: 1px solid #CC9933;
+}
+
+
+:root {
+    --white-color: #ffffff;
+    --black-color: #333333;
+    --grey-color: #e5e5e5;
+    --orange-color: #cc9933;
+    --dark-grey: #666666;
+    --lighty-grey: #e1e1e1;
+    --dark-black: #000000;
+}
+
+.site-btn {
+    padding: 13px 20px;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out, color .3s ease-in-out;
+    background-color: transparent;
+    border: 1px solid var(--orange-color);
+    color: var(--orange-color);
+    border-radius: 10px;
+}
+
+.site-btn::focus{
+    outline: none;
+    border: 1px solid var(--orange-color);
+}
+
+.header-top{
+    display: flex;
+    padding-top: 30px;
+    padding-bottom: 24px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-lan
+{
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    margin: 0;
+    margin-right: 40px;
+}
+.header-number
+{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    color: var(--dark-grey);
+}
+
+.header-number:focus{
+    outline: none;
+    border: 1px solid #CC9933;
+}
+
+.header-number:hover{
+    color: var(--orange-color);
+}
+
+.header-login
+{
+    background-image: url(../Lagona/IMG/PNG/Vector\ \(1\).png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 30px;
+    color: orange;
+
+}
+
+.header-login:hover{
+    padding-left: 25px;
+    transition: 1s;
+    background-image: url(../Lagona/IMG/Vector.svg);
+}
+.header-login:focus{
+    outline: none;
+    border: 1px solid #CC9933;
+}
+
+.header-buttom{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 45px;
+    border-radius: 15px;
+    background-color: white ;
+    margin-bottom: 70px;
+}
+
+.nav{
+    display: flex;
+}
+
+.nav_list{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-right: auto;
+}
+
+.nav_item
+{
+    margin-right: 45px;
+}
+
+.nav-link{
+    font-family: 'Muller';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    color: #666666;
+}
+.nav-link:focus{
+    outline: none;
+    border: 1px solid #CC9933;
+}
+
+.nav-link:hover{
+    color: var( --orange-color);
+}
+
+.inner-button{
+    padding-left: 57px;
+}
+
+.nav-btn{
+    padding: 13px 20px;
+    border-color: orange;
+    color: orange;
+    border-radius: 10px;
+    background-color: white;
+    transition: color 0.2s, background 0.2s;
+}
+.nav-btn:focus{
+    outline: none;
+    background: #A47312;
+    border: 1px solid #A47312;
+}
+
+.nav-btn:first-child {
+    margin-right: 35px;
+}
+
+
+
+.h-special{
+    margin-bottom: 20px;
+}
+
+.special-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.special-left {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;  
+}
+
+
+.special-article-left {
+    border-radius: 15px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-width: 573px;
+    min-height: 258px;
+}
+
+
+.special-article-right{
+    border-radius: 15px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-width: 573px;
+    min-height: 540px;
+}
+
+
+.special-article__title{
+    width: 420px;
+    padding-top: 40px;
+    padding-left: 45px;
+    margin-bottom: 15px;
+    word-break: break-word;
+    font-family: 'Muller';
+    font-style: normal;
+    font-size: 40px;
+    line-height: 40px;
+    color: var(--white-color);
+}
+
+.special-article__price{
+    display: block;
+    width: 107px;
+    height: 20px;
+    padding-left: 45px;
+    font-family: 'Muller';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    color: #FFFFFF;
+    padding-bottom: 47px;
+}
+
+.special-article__title-right{
+    padding: 212px 229px 15px 45px ;
+    width: 299px;
+    height: 180px;
+    font-family: 'Muller';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 60px;
+    color: white;
+}
+
+.special-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.special-article__price-right{
+    width: 107px;
+    height: 20px;
+    margin-left: 45px;
+
+    font-family: 'Muller';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    color: #FFFFFF;
+    
+}
+
+.special-article__link{
+    /*position: relative;
+    padding-right: 16px;
+    background-image: url(../Lagona/IMG/PNG/Rectangle\ 2.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+
+    color: orange;
+
+    padding-top: 47px;
+    padding-left: 45px;
+    padding-bottom: 40px;
+
+    display: block;
+
+    font-family: 'Muller';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;*/
+    font-family: 'Muller';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    text-decoration: none;
+    color: orange;
+    padding-left: 45px;
+    background-repeat: no-repeat;
+    background-position: right;
+    padding-right: 15px;
+    background-image: url(../Lagona/IMG/PNG/Rectangle\ 2.png);
+}
+.special-article__link:focus{
+    outline: none;
+    border: 1px solid #CC9933;
+}
+
+.special-article__link svg{
+    stroke:#FFCC66;
+    position: absolute;
+}
+
+.special-article__link:hover{
+    padding-right: 25px;
+    transition: 1s;
+    background-image: url(../Lagona/IMG/arrow1.svg);
+}
+
+.about{
+    padding-top: 70px;
+}
+
+.site-heading{
+    padding-left: 40px;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 40px;
+    color: var(--black-color);
+}
+
+.about-text{
+line-height: 200%;
+
+color: #000000;
+}
+
+
+
+.service {
+    padding-top: 44px;
+}
+
+.service-heading {
+    margin-bottom: 18px;
+}
+
+.service-list {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 23px;
+}
+
+.service-item {
+    width: 480px;
+    padding: 200px 45px 50px;
+    border-radius: 15px;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-color: white;
+    font-family: 'Muller';
+}
+
+
+.service-title {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 6px;
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: 18px;
+}
+
+.service-link{
+    position: relative;
+    color: var( --orange-color);
+    padding-right: 15px;
+    background-image: url(../Lagona/IMG/PNG/Rectangle\ 2.png);
+    background-repeat: no-repeat;
+    text-decoration: none;
+    background-position: right;
+}
+.special-link:focus{
+    outline: none;
+    border: 1px solid #CC9933;
+}
+.service-link:hover{
+    padding-right: 25px;
+    transition: 1s;
+    color: #A47312;
+    background-image: url(../Lagona/IMG/arrow1.svg);
+}
+
+.service-link svg{
+    stroke:#FFCC66;
+    position: absolute;
+    right: 0;
+    top: 1,5px;
+    transition: right 0.9 linear;
+}
+
+
+
+.service-descr {
+    margin: 0;
+    max-width: 402px;
+    line-height: 32px;
+    color: var(--dark-black);
+}
+
+
+
+.advantages {
+    margin-top: 71px;
+}
+.advantages-heading {
+    margin-bottom: 30px;
+}
+
+.advantages-list {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    gap: 22px;
+}
+
+.advantages-item {
+    width: 276px;
+    height: 276px;
+    border-radius: 15px;
+    background-repeat: no-repeat;
+    background-position: top 40px left 45px;
+    background-color: white;
+}
+
+
+.advantages-text {
+    font-family: 'Muller';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 200%;
+    margin-top: 116px;
+    margin-left: 45px;
+    margin-right: 42px;
+    margin-bottom: 32px;
+    color: #000000;
+}
+
+
+/* accommodation */
+
+.accommodation {
+    padding-top: 69px;
+    padding-bottom: 30px;
+}
+
+.accommodation-heading {
+    margin-bottom: 29px;
+}
+.accommodation-list {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.accommodation-item {
+    width: 374px;
+    height: 440px;
+    overflow: hidden;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.accommodation-item {
+    margin-bottom: 23px;
+}
+
+.accommodation-article-inner {
+    padding: 31px 46px 41px 45px;
+}
+
+.accommodation-article-price,
+.accommodation-article-stars {
+    display: inline-block;
+}
+
+.accommodation-article-price {
+    margin-right: 44px;
+    margin-bottom: 13px;
+}
+
+.accommodation-article-text {
+    color: #999999;
+}
+
+.price-total {
+    font-size: 20px;
+}
+
+.accommodation-article-title {
+    font-weight: 400;
+    margin-bottom: 16px;
+    font-size: 16px;
+    color: black ;  
+}
+
+.accommodation-article-descr {
+    margin-bottom: 14px;
+    color: #999999;
+}
+
+.accommodation-back{
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    background-image: url(../Lagona/IMG/JPG/41.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.accommodation-item-link {
+    width: 250px;
+    height: 40px;
+
+    font-family: 'Muller';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 200%;
+    color: #FFFFFF;
+    background-image: url("../IMG/arrow2.svg");
+    background-position: right center;
+    background-repeat: no-repeat;
+    padding-bottom: 27px;
+    padding-left: 54px;
+    padding-right: 70px;
+}
+
+.accommodation-item-link:focus{
+    outline: none;
+    color: var(--orange-color);
+}
+
+.accommodation-article-btn:focus{
+    outline: none;
+    background: #A47312;
+    border: 1px solid #A47312;
+}
+
+.site-btn:hover{
+    color: white;
+    background:var( --orange-color);
+}
+
+.site-btn:focus{
+    outline: none;
+    background: #A47312;
+    border: 1px solid #A47312;
+}
+
+
+.accommodation-item-link::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*Тур*/
+
+
+.tour{
+    padding-top: 17px;
+    padding-bottom: 30px;
+}
+
+.tour__inner{
+    padding: 38px 45px 71px;
+    background: lightgray;
+    border-radius: 15px;
+    max-width: 1200px;
+}
+
+.tour__heading{
+    padding: 0;
+    margin-bottom: 19px;
+}
+
+.tour__form{
+    padding: 32px 28px;
+    display: flex;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.form__label{
+    margin-right: 22px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.select{
+    margin-top: 12px;
+    font-size: 16px;
+    border: none;
+}
+
+.select:first-child {
+    width: 169px;
+}
+
+.form__input {
+    width: 142px;
+    margin-top: 12px;
+    font-size: 16px;
+    border: none;
+}
+
+.form__input {
+    width: 142px;
+    margin-top: 12px;
+    font-size: 16px;
+    border: none;
+}
+
+.form__btn{
+    padding: 13px 30px;
+    border: 1px solid orange;
+    color: orange;
+    border-radius: 10px;
+}
+.form__input--border{
+    border-bottom: 1px solid #ccc;
+}
+
+/* Контакты*/
+
+.contacts {
+    padding-top: 35px;
+    padding-bottom: 18px;
+}
+
+.contacts-heading {
+    margin-bottom: 24px;
+}
+
+.contacts-content {
+    padding: 45px;
+    border-radius: 15px;
+    background-image: url(../Lagona/IMG/JPG/footer-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: 91% center;
+    background-color: white;
+}
+
+.contacts-list {
+    max-width: 380px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.contacts-item {
+    padding-bottom: 23px;
+    margin-bottom: 25px;
+    line-height: 24px;
+    border-bottom: 1px solid var(--lighty-grey);
+    display: flex;
+    justify-content: space-between;
+}
+
+.contacts-item:last-child {
+    margin-bottom: 45px;
+}
+
+.contacts-address {
+    margin: 0px;
+}
+
+
+
+.contacts-number {
+    display: block;
+}
+
+.contacts-number:hover{
+    color: #A47312;
+}
+
+.contacts-wrapper {
+    width: 235px;
+    text-align: start;
+}
+
+.contacts-title {
+    font-weight: 700px;
+    font-size: 20px;
+}
+
+.contacts-btn {
+    padding: 27px 29px;
+}
+
+/* footer*/
+
+.footer-inner {
+    display: flex;
+    padding: 44px 52px;
+    margin-bottom: 20px;
+    color: var(--white-color);
+    color: white;
+    line-height: 30px;
+    border-radius: 15px;
+    background-image: url(../Lagona/IMG/bg.svg);
+    background-repeat: no-repeat;
+    background-position: 81% 100%;
+    background-color: var(--black-color);
+    background-color:black;
+}
+
+.footer-copyright {
+    margin-right: 94px;
+    max-width: 320px;
+}
+
+.copyright-text {
+    margin-top: 0px;
+    margin-bottom: 37px;
+}
+
+.footer-address {
+    margin-right: 259px;
+    padding-left: 10px;
+}
+
+.footer-address-text {
+    margin: 0 0 4px;;
+}
+
+.footer-address a {
+    display: block;
+}
+
+.social-link {
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.social-link:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.social-link:hover {
+    transition: opacity .3s ease-in-out;
+    opacity: 0.5;
+}
