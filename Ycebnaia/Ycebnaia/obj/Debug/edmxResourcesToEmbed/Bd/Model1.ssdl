@@ -1,0 +1,492 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище BdpracticModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="client">
+    <Key>
+      <PropertyRef Name="id_client" />
+    </Key>
+    <Property Name="id_client" Type="int" Nullable="false" />
+    <Property Name="familiya" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="imya" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="otchestvo" Type="nvarchar" MaxLength="20" />
+    <Property Name="data_rog" Type="date" Nullable="false" />
+    <Property Name="telefon" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="pol" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="data_registr" Type="date" Nullable="false" />
+    <Property Name="photo" Type="nvarchar" MaxLength="50" />
+    <Property Name="id_tip" Type="int" />
+  </EntityType>
+  <EntityType Name="complimentarnie tovar">
+    <Key>
+      <PropertyRef Name="id_complimentarnie_tovar" />
+    </Key>
+    <Property Name="id_complimentarnie_tovar" Type="int" Nullable="false" />
+    <Property Name="id_tovar_1" Type="int" Nullable="false" />
+    <Property Name="id_tovar_2" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="kategoriya sotrudnika">
+    <Key>
+      <PropertyRef Name="id_kategorii" />
+    </Key>
+    <Property Name="id_kategorii" Type="int" Nullable="false" />
+    <Property Name="nazvanie" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="kategoriya tovar">
+    <Key>
+      <PropertyRef Name="id_kategorii" />
+    </Key>
+    <Property Name="id_kategorii" Type="int" Nullable="false" />
+    <Property Name="nazvanie" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="prodagi">
+    <Key>
+      <PropertyRef Name="id_prodag" />
+    </Key>
+    <Property Name="id_prodag" Type="int" Nullable="false" />
+    <Property Name="kolichestvo" Type="int" Nullable="false" />
+    <Property Name="id_tovar" Type="int" Nullable="false" />
+    <Property Name="data_proagi" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="prodagi_yslyg_client">
+    <Key>
+      <PropertyRef Name="id_prodag_ys_client" />
+    </Key>
+    <Property Name="id_prodag_ys_client" Type="int" Nullable="false" />
+    <Property Name="id_yslyg_client" Type="int" Nullable="false" />
+    <Property Name="id_prodag" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="proizvoditel">
+    <Key>
+      <PropertyRef Name="id_proizvod" />
+    </Key>
+    <Property Name="id_proizvod" Type="int" Nullable="false" />
+    <Property Name="data_nachala_work" Type="date" Nullable="false" />
+    <Property Name="nazvanie" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sezon">
+    <Key>
+      <PropertyRef Name="id_sezon" />
+    </Key>
+    <Property Name="id_sezon" Type="int" Nullable="false" />
+    <Property Name="nazvanie_sezona" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="nachalo_sezona" Type="date" Nullable="false" />
+    <Property Name="konec_sezona" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sezonue tovar">
+    <Key>
+      <PropertyRef Name="id_sezonie_tovar" />
+    </Key>
+    <Property Name="id_sezonie_tovar" Type="int" Nullable="false" />
+    <Property Name="id_sezon" Type="int" Nullable="false" />
+    <Property Name="id_tovar" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sklad">
+    <Key>
+      <PropertyRef Name="id_sklad" />
+    </Key>
+    <Property Name="id_sklad" Type="int" Nullable="false" />
+    <Property Name="kolich_tovarov" Type="int" Nullable="false" />
+    <Property Name="id_tovar" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sotrudnik">
+    <Key>
+      <PropertyRef Name="id_sotrydnika" />
+    </Key>
+    <Property Name="id_sotrydnika" Type="int" Nullable="false" />
+    <Property Name="familiya" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="imya" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="otchestvo" Type="nvarchar" MaxLength="20" />
+    <Property Name="seriya_pasporta" Type="int" Nullable="false" />
+    <Property Name="nomer_pasporta" Type="int" Nullable="false" />
+    <Property Name="id_podrazdeleniya" Type="int" Nullable="false" />
+    <Property Name="pol" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="koeffic_oplati" Type="float" Nullable="false" />
+    <Property Name="data_rog" Type="date" Nullable="false" />
+    <Property Name="id_kategorii" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tip clienta">
+    <Key>
+      <PropertyRef Name="id_tip" />
+    </Key>
+    <Property Name="id_tip" Type="int" Nullable="false" />
+    <Property Name="nazvanie" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="color" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="rasnovidnost" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tovar">
+    <Key>
+      <PropertyRef Name="id_tovar" />
+    </Key>
+    <Property Name="id_tovar" Type="int" Nullable="false" />
+    <Property Name="xaracteristika" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="opisanie" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="photo" Type="nvarchar" MaxLength="50" />
+    <Property Name="naimenovanie" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="kategoriya" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="stoimost" Type="float" Nullable="false" />
+    <Property Name="paznovidnost" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="visota" Type="float" Nullable="false" />
+    <Property Name="shirina" Type="float" Nullable="false" />
+    <Property Name="dlina" Type="float" Nullable="false" />
+    <Property Name="glavnoe_izobragenie" Type="nvarchar" MaxLength="50" />
+    <Property Name="dop_photo" Type="nvarchar" MaxLength="50" />
+    <Property Name="id_proizvod" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="yslygi">
+    <Key>
+      <PropertyRef Name="id_yslyg" />
+    </Key>
+    <Property Name="id_yslyg" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naimenovanue" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="skidka" Type="float" />
+    <Property Name="photo" Type="nvarchar" MaxLength="50" />
+    <Property Name="dlitelnost" Type="int" Nullable="false" />
+    <Property Name="tcena" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="yslygi client">
+    <Key>
+      <PropertyRef Name="id_yslyg_client" />
+    </Key>
+    <Property Name="id_yslyg_client" Type="int" Nullable="false" />
+    <Property Name="id_client" Type="int" Nullable="false" />
+    <Property Name="id_yslyg" Type="int" Nullable="false" />
+    <Property Name="soglasit_client" Type="nvarchar" MaxLength="3" />
+    <Property Name="nachalo_okazaniya_ys" Type="date" Nullable="false" />
+    <Property Name="oplata" Type="float" />
+  </EntityType>
+  <EntityType Name="yslygi_sotrudnika">
+    <Key>
+      <PropertyRef Name="id_yslyg_sotrudnik" />
+    </Key>
+    <Property Name="id_yslyg_sotrudnik" Type="int" Nullable="false" />
+    <Property Name="id_sotrudnik" Type="int" Nullable="false" />
+    <Property Name="id_yslyg" Type="int" Nullable="false" />
+    <Property Name="data_vremya_yslygi" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_client_tip clienta">
+    <End Role="tip clienta" Type="Self.tip clienta" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="client" Type="Self.client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tip clienta">
+        <PropertyRef Name="id_tip" />
+      </Principal>
+      <Dependent Role="client">
+        <PropertyRef Name="id_tip" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_complimentarnie tovar_tovar">
+    <End Role="tovar" Type="Self.tovar" Multiplicity="1" />
+    <End Role="complimentarnie tovar" Type="Self.complimentarnie tovar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tovar">
+        <PropertyRef Name="id_tovar" />
+      </Principal>
+      <Dependent Role="complimentarnie tovar">
+        <PropertyRef Name="id_tovar_1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_complimentarnie tovar_tovar1">
+    <End Role="tovar" Type="Self.tovar" Multiplicity="1" />
+    <End Role="complimentarnie tovar" Type="Self.complimentarnie tovar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tovar">
+        <PropertyRef Name="id_tovar" />
+      </Principal>
+      <Dependent Role="complimentarnie tovar">
+        <PropertyRef Name="id_tovar_2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_prodagi_tovar">
+    <End Role="tovar" Type="Self.tovar" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="prodagi" Type="Self.prodagi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tovar">
+        <PropertyRef Name="id_tovar" />
+      </Principal>
+      <Dependent Role="prodagi">
+        <PropertyRef Name="id_tovar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_prodagi_yslyg_client_prodagi">
+    <End Role="prodagi" Type="Self.prodagi" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="prodagi_yslyg_client" Type="Self.prodagi_yslyg_client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="prodagi">
+        <PropertyRef Name="id_prodag" />
+      </Principal>
+      <Dependent Role="prodagi_yslyg_client">
+        <PropertyRef Name="id_prodag" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_prodagi_yslyg_client_yslygi client">
+    <End Role="yslygi client" Type="Self.yslygi client" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="prodagi_yslyg_client" Type="Self.prodagi_yslyg_client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="yslygi client">
+        <PropertyRef Name="id_yslyg_client" />
+      </Principal>
+      <Dependent Role="prodagi_yslyg_client">
+        <PropertyRef Name="id_yslyg_client" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sezonue tovar_sezon">
+    <End Role="sezon" Type="Self.sezon" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sezonue tovar" Type="Self.sezonue tovar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sezon">
+        <PropertyRef Name="id_sezon" />
+      </Principal>
+      <Dependent Role="sezonue tovar">
+        <PropertyRef Name="id_sezon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sezonue tovar_tovar">
+    <End Role="tovar" Type="Self.tovar" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sezonue tovar" Type="Self.sezonue tovar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tovar">
+        <PropertyRef Name="id_tovar" />
+      </Principal>
+      <Dependent Role="sezonue tovar">
+        <PropertyRef Name="id_tovar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sklad_tovar">
+    <End Role="tovar" Type="Self.tovar" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sklad" Type="Self.sklad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tovar">
+        <PropertyRef Name="id_tovar" />
+      </Principal>
+      <Dependent Role="sklad">
+        <PropertyRef Name="id_tovar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sotrudnik_kategoriya sotrudnika">
+    <End Role="kategoriya sotrudnika" Type="Self.kategoriya sotrudnika" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sotrudnik" Type="Self.sotrudnik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kategoriya sotrudnika">
+        <PropertyRef Name="id_kategorii" />
+      </Principal>
+      <Dependent Role="sotrudnik">
+        <PropertyRef Name="id_kategorii" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tovar_proizvoditel">
+    <End Role="proizvoditel" Type="Self.proizvoditel" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tovar" Type="Self.tovar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proizvoditel">
+        <PropertyRef Name="id_proizvod" />
+      </Principal>
+      <Dependent Role="tovar">
+        <PropertyRef Name="id_proizvod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_yslygi client_client">
+    <End Role="client" Type="Self.client" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="yslygi client" Type="Self.yslygi client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="client">
+        <PropertyRef Name="id_client" />
+      </Principal>
+      <Dependent Role="yslygi client">
+        <PropertyRef Name="id_client" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_yslygi client_yslygi">
+    <End Role="yslygi" Type="Self.yslygi" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="yslygi client" Type="Self.yslygi client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="yslygi">
+        <PropertyRef Name="id_yslyg" />
+      </Principal>
+      <Dependent Role="yslygi client">
+        <PropertyRef Name="id_yslyg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_yslygi_sotrudnika_sotrudnik">
+    <End Role="sotrudnik" Type="Self.sotrudnik" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="yslygi_sotrudnika" Type="Self.yslygi_sotrudnika" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sotrudnik">
+        <PropertyRef Name="id_sotrydnika" />
+      </Principal>
+      <Dependent Role="yslygi_sotrudnika">
+        <PropertyRef Name="id_sotrudnik" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_yslygi_sotrudnika_yslygi">
+    <End Role="yslygi" Type="Self.yslygi" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="yslygi_sotrudnika" Type="Self.yslygi_sotrudnika" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="yslygi">
+        <PropertyRef Name="id_yslyg" />
+      </Principal>
+      <Dependent Role="yslygi_sotrudnika">
+        <PropertyRef Name="id_yslyg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="Хранилище BdpracticModelContainer">
+    <EntitySet Name="client" EntityType="Self.client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="complimentarnie tovar" EntityType="Self.complimentarnie tovar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kategoriya sotrudnika" EntityType="Self.kategoriya sotrudnika" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kategoriya tovar" EntityType="Self.kategoriya tovar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="prodagi" EntityType="Self.prodagi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="prodagi_yslyg_client" EntityType="Self.prodagi_yslyg_client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="proizvoditel" EntityType="Self.proizvoditel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sezon" EntityType="Self.sezon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sezonue tovar" EntityType="Self.sezonue tovar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sklad" EntityType="Self.sklad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sotrudnik" EntityType="Self.sotrudnik" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tip clienta" EntityType="Self.tip clienta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tovar" EntityType="Self.tovar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="yslygi" EntityType="Self.yslygi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="yslygi client" EntityType="Self.yslygi client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="yslygi_sotrudnika" EntityType="Self.yslygi_sotrudnika" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_client_tip clienta" Association="Self.FK_client_tip clienta">
+      <End Role="tip clienta" EntitySet="tip clienta" />
+      <End Role="client" EntitySet="client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_complimentarnie tovar_tovar" Association="Self.FK_complimentarnie tovar_tovar">
+      <End Role="tovar" EntitySet="tovar" />
+      <End Role="complimentarnie tovar" EntitySet="complimentarnie tovar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_complimentarnie tovar_tovar1" Association="Self.FK_complimentarnie tovar_tovar1">
+      <End Role="tovar" EntitySet="tovar" />
+      <End Role="complimentarnie tovar" EntitySet="complimentarnie tovar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_prodagi_tovar" Association="Self.FK_prodagi_tovar">
+      <End Role="tovar" EntitySet="tovar" />
+      <End Role="prodagi" EntitySet="prodagi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_prodagi_yslyg_client_prodagi" Association="Self.FK_prodagi_yslyg_client_prodagi">
+      <End Role="prodagi" EntitySet="prodagi" />
+      <End Role="prodagi_yslyg_client" EntitySet="prodagi_yslyg_client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_prodagi_yslyg_client_yslygi client" Association="Self.FK_prodagi_yslyg_client_yslygi client">
+      <End Role="yslygi client" EntitySet="yslygi client" />
+      <End Role="prodagi_yslyg_client" EntitySet="prodagi_yslyg_client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sezonue tovar_sezon" Association="Self.FK_sezonue tovar_sezon">
+      <End Role="sezon" EntitySet="sezon" />
+      <End Role="sezonue tovar" EntitySet="sezonue tovar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sezonue tovar_tovar" Association="Self.FK_sezonue tovar_tovar">
+      <End Role="tovar" EntitySet="tovar" />
+      <End Role="sezonue tovar" EntitySet="sezonue tovar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sklad_tovar" Association="Self.FK_sklad_tovar">
+      <End Role="tovar" EntitySet="tovar" />
+      <End Role="sklad" EntitySet="sklad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sotrudnik_kategoriya sotrudnika" Association="Self.FK_sotrudnik_kategoriya sotrudnika">
+      <End Role="kategoriya sotrudnika" EntitySet="kategoriya sotrudnika" />
+      <End Role="sotrudnik" EntitySet="sotrudnik" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tovar_proizvoditel" Association="Self.FK_tovar_proizvoditel">
+      <End Role="proizvoditel" EntitySet="proizvoditel" />
+      <End Role="tovar" EntitySet="tovar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_yslygi client_client" Association="Self.FK_yslygi client_client">
+      <End Role="client" EntitySet="client" />
+      <End Role="yslygi client" EntitySet="yslygi client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_yslygi client_yslygi" Association="Self.FK_yslygi client_yslygi">
+      <End Role="yslygi" EntitySet="yslygi" />
+      <End Role="yslygi client" EntitySet="yslygi client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_yslygi_sotrudnika_sotrudnik" Association="Self.FK_yslygi_sotrudnika_sotrudnik">
+      <End Role="sotrudnik" EntitySet="sotrudnik" />
+      <End Role="yslygi_sotrudnika" EntitySet="yslygi_sotrudnika" />
+    </AssociationSet>
+    <AssociationSet Name="FK_yslygi_sotrudnika_yslygi" Association="Self.FK_yslygi_sotrudnika_yslygi">
+      <End Role="yslygi" EntitySet="yslygi" />
+      <End Role="yslygi_sotrudnika" EntitySet="yslygi_sotrudnika" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

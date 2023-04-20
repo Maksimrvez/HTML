@@ -1,0 +1,594 @@
+@font-face {
+    font-family: 'Montserrat';
+    font-display: swap;
+    font-style: normal;
+    font-weight: 400;
+    src: local('MontserratRegular'), local('Montserrat-Regular'),
+     url(../Евклид/fonts/montserrat-regular-webfont.woff) format('woff'),
+     url(../Евклид/fonts/montserrat-regular-webfont.woff2) format('woff2');
+  }
+  
+  @font-face {
+      font-family: 'Montserrat';
+      font-display: swap;
+      font-style: normal;
+      font-weight: 600;
+      src: local('MontserratSemibold'), local('Montserrat-Semibold'),
+       url(../Евклид/fonts/montserrat-semibold-webfont.woff) format('woff'),
+       url(../Евклид/fonts/montserrat-semibold-webfont.woff2) format('woff2')
+  }
+  
+  @font-face {
+      font-family: 'Montserrat';
+      font-display: swap;
+      font-style: normal;
+      font-weight: 700;
+      src: local('MontserratBold'), local('Montserrat-Bold'),
+       url(../Евклид/fonts/montserrat-bold-webfont.woff) format('woff'),
+       url(../Евклид/fonts/montserrat-bold-webfont.woff2) format('woff2')
+  }
+  
+  @font-face {
+      font-family: 'Montserrat';
+      font-display: swap;
+      font-style: normal;
+      font-weight: 800;
+      src: local('MontserratExtrabold'), local('Montserrat-Extrabold'),
+       url(../Евклид/fonts/montserrat-extrabold-webfont.woff) format('woff'),
+       url(../Евклид/fonts/montserrat-extrabold-webfont.woff2) format('woff2')
+  }
+
+  .logo-menu img {
+    display: none;
+  }
+  @media (max-width: 1200px) {
+    .logo-evklid img {
+      display: none;
+    }
+    .logo-evklid img + .logo-menu img {
+      display: block;
+    }
+  }
+
+  
+
+body{
+    font-family: 'Montserrat', sans-serif, 'Muller';
+    background-color: var(--white-color);
+    min-width: 320px;
+    margin: 0 auto;
+}
+
+h3{
+    font-family: 'Montserrat';
+}
+
+:root {
+    --dark-white: #E5E5E5;
+    --white-color: #ffffff;
+    --black-color: #333333;
+    --grey-color: #CACACA;
+    --orange-color: #FF9900;
+    --orange-color-hover: #FFB84D;
+    --orange-color-focus: #FFB84D;
+    --orange-color-active: #E1670E;
+    --dark-grey: #666666;
+    --lighty-grey: #e1e1e1;
+    --dark-black: #000000;
+    --form-color: #414141;
+}
+
+.cursiv{
+    font-family: 'Montserrat';
+    font-style: normal;
+}
+
+.container{
+    margin: 0 auto;
+    max-width: 1770px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 75px;
+    padding-right: 75px;
+}
+
+.heading {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 59px;
+    color: var(--black-color)
+}
+
+.header{
+    background: var(--white-color);
+    width: 100%;
+    box-shadow: 0px 0px 10px rgb(0 0 0 / 80%);
+    border-radius: 0px 0px 32px 32px;
+    margin-bottom: 50px;
+}
+
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.list-reset{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.header-ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header-li{
+    padding-right:85px;
+}
+
+.header-li-item{
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: var(--black-color);
+    padding: 5px;
+}
+
+/*order*/
+
+.section-order{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.order-back{
+    width: 100%;
+    min-width: 600px;
+    min-height: 620px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 32px;
+    background-image: url(../Евклид/IMG/PNG/low-angle-photo-of-balconies-2462015\ 1.png);
+}
+
+.h-order{
+    margin-bottom: 0;
+    font-weight: 800;
+    font-size: 70px;
+    line-height: 85px;
+    color: var(--white-color);
+    padding-top: 100px;
+    padding-left: 75px;
+}
+
+.p-title{
+    margin: 0;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    padding-top: 24px;
+    padding-left: 80px;
+    color: var(--white-color);
+}
+
+.order-btn{
+    margin-top: 90px;
+    margin-left: 80px;
+    min-width: 280px;
+    min-height: 78px;
+    background-color: var(--orange-color);
+    border-radius: 16px;
+    border-color: var(--orange-color);
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 28px;
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+
+.section-about{
+    margin-bottom: 50px;
+}
+
+
+.h-about{   
+margin: 0;
+margin-bottom: 20px;
+}
+
+.about-title{
+margin: 0;
+
+    line-height: 32px;
+    width: 70%;
+
+font-weight: 400;
+font-size: 16px;
+margin-bottom: 50px;
+}
+
+.buttom-about{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.left-about{
+    background-image: url(../Евклид/IMG/PNG/Rectangle\ 2.png);
+    border-radius: 32px;
+    display: flex;
+    align-items: flex-end;
+    width: 49%;
+    min-height: 622px;
+    min-width: 500px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 32px;
+}
+
+.back-left-about{
+    width: 100%;
+    min-width: 49%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 32px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.about-title-left{
+    margin: 0;
+    max-width: 454px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 32px;
+    color: var(--white-color);
+}
+
+
+.about-btn{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 19px 38px;
+    gap: 10px;
+    
+    max-width: 175px;
+    max-height: 60px;
+    
+    border: 3px solid var(--orange-color);
+    border-radius: 16px;
+    background-color: transparent;
+    color: var(--white-color);
+
+    margin-right: 50px;
+
+    cursor: pointer;
+}
+
+.right-about{
+    max-width: 49%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.top-right-about{
+    display: flex;
+    background: var(--white-color);
+    border: 1px solid var(--grey-color);
+    border-radius: 32px;
+ 
+    min-width: 350px;
+
+    padding-top: 64px;
+    padding-bottom: 64px;
+    padding-left: 60px;
+    padding-right: 90px;
+}
+
+.buttom-right-about{
+    background: #FFFFFF;
+    border: 1px solid var(--grey-color);
+    border-radius: 32px;
+    display: flex;
+    padding-top: 64px;
+    padding-bottom: 64px;
+    padding-left: 60px;
+    padding-right: 90px;
+    min-width: 350px;
+}
+
+.about-img{
+    max-width: 240px;
+    padding-right: 50px;
+}
+
+.consult-h{ 
+    padding-bottom: 8px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: var(--dark-black);
+}
+
+.about-title-right{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    color: var(--dark-black);
+}
+
+
+
+.answer{
+ margin-bottom: 100px;
+}
+
+.answer-h{
+    margin: 0;
+    margin-bottom: 50px;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 59px;
+}
+
+.answer-list{
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+
+.answer-item:not(last-child){
+    margin-right: 90px;
+}
+
+.answer-btn-default{
+    color: var(--orange-color);
+}
+
+.answer-steps-button{
+    font-size: 18px;
+    color: var(--black-color);
+}
+
+.btn-reset{
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    padding: 0;
+}
+
+.tab-content{
+    display: none;
+}
+
+.answer-content{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.tab-content--active{
+    display: flex;
+}
+
+.answer-left{
+    width: 50%;
+    min-height: 471px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.answer-konslut{
+    margin: 0;
+    color: var(--dark-black);
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.answer-p{
+    margin: 0;
+    margin-bottom: 10px;
+    color: var(--black-color);
+    max-width: 758px;
+    line-height: 32px;
+}
+
+.btns-answer{
+    display: flex;
+    align-items: center;
+}
+
+.answer-btn{
+    padding: 20px 38px;
+}
+
+.answer-btn:first-child{
+    margin-right: 30px;
+}
+
+.site-btn{
+    font-weight: 700;
+    border-radius: 16px;
+    cursor: pointer;
+    background: var(--orange-color);
+    color: var(--white-color);
+}
+
+.answer-left-btn--border{
+    background-color: transparent;
+    border: 1px solid var(--black-color);
+    border-radius: 16px;
+    border-color: var(--dark-black);
+}
+
+.answer-right{
+    padding-top: 6px;
+    width: 49%;
+    height: 100%;
+}
+
+.ans-img{
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.qustions{
+    margin-bottom: 100px;
+}
+
+.qustions-h2{
+    margin: 0;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 59px;
+    margin-bottom: 32px;
+}
+
+.qustions-div{
+    border-bottom: 1px solid var(--grey-color);
+}
+
+.qustions-item{
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+
+    padding: 40px 0;
+    border-top: 1px solid var(--grey-color);
+}
+
+.foter{
+    background-color: var(--dark-black);
+    padding-top: 48px;
+    padding-bottom: 20px;
+}
+
+.footer-container{
+    display: flex;
+    align-items: flex-start; 
+}
+
+.left-foter{
+    width: 34%;
+}
+
+.logo-evklid{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.footer-logo{
+    margin-bottom: 20px;
+}
+
+.left-ul{
+    margin-bottom: 113px;
+}
+
+.foter-item-li:not(:last-child){
+    margin-bottom: 18px;
+}
+
+.footer-ling{
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--grey-color);
+}
+
+.footer-images{
+    display: flex;
+    align-items: center;
+}
+
+.footer-ico:not(:last-child){
+    margin-right: 25px;
+}
+
+.footer-ico{
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.right-footer{
+    margin: 0;
+    justify-content: space-between;
+    padding-top: 14px;
+    display: flex;
+    width: 66%;
+}
+
+.footer-form-div{
+    min-width: 570px;
+}
+
+.h-form{
+    margin: 0;
+    margin-bottom: 25px;
+    font-weight: 400;
+    font-size: 48px;
+    color: var(--grey-color);
+}
+
+.footer-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input{
+    padding-left: 24px;
+    height: 60px;
+    margin-bottom: 19px;
+    background: var(--form-color);
+    border-radius: 16px;
+    color: var(--grey-color);
+}
+
+.form-area{
+    padding-left: 24px;
+    padding-top: 14px;
+    height: 150px;
+    resize: none;
+    margin-bottom: 32px;
+    max-width: 100%;
+    border-radius: 16px;
+    background-color: var(--form-color);
+    color: var(--grey-color);
+}
+
+.form-button{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 19px 38px;
+    gap: 10px;
+    max-width: 269px;
+    max-height: 58px;
+}
+
+.p-foter{
+    max-width: 363px;
+    line-height: 32px;
+    color: var(--grey-color);
+}

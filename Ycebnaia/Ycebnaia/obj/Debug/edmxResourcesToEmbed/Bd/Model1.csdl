@@ -1,0 +1,532 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BdpracticModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="client">
+    <Key>
+      <PropertyRef Name="id_client" />
+    </Key>
+    <Property Name="id_client" Type="Int32" Nullable="false" />
+    <Property Name="familiya" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="imya" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="otchestvo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="data_rog" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pol" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="data_registr" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="photo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="id_tip" Type="Int32" />
+    <NavigationProperty Name="tip_clienta" Relationship="Self.FK_client_tip_clienta" FromRole="client" ToRole="tip_clienta" />
+    <NavigationProperty Name="yslygi_client" Relationship="Self.FK_yslygi_client_client" FromRole="client" ToRole="yslygi_client" />
+  </EntityType>
+  <EntityType Name="complimentarnie_tovar">
+    <Key>
+      <PropertyRef Name="id_complimentarnie_tovar" />
+    </Key>
+    <Property Name="id_complimentarnie_tovar" Type="Int32" Nullable="false" />
+    <Property Name="id_tovar_1" Type="Int32" Nullable="false" />
+    <Property Name="id_tovar_2" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tovar" Relationship="Self.FK_complimentarnie_tovar_tovar" FromRole="complimentarnie_tovar" ToRole="tovar" />
+    <NavigationProperty Name="tovar1" Relationship="Self.FK_complimentarnie_tovar_tovar1" FromRole="complimentarnie_tovar" ToRole="tovar" />
+  </EntityType>
+  <EntityType Name="kategoriya_sotrudnika">
+    <Key>
+      <PropertyRef Name="id_kategorii" />
+    </Key>
+    <Property Name="id_kategorii" Type="Int32" Nullable="false" />
+    <Property Name="nazvanie" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="sotrudnik" Relationship="Self.FK_sotrudnik_kategoriya_sotrudnika" FromRole="kategoriya_sotrudnika" ToRole="sotrudnik" />
+  </EntityType>
+  <EntityType Name="kategoriya_tovar">
+    <Key>
+      <PropertyRef Name="id_kategorii" />
+    </Key>
+    <Property Name="id_kategorii" Type="Int32" Nullable="false" />
+    <Property Name="nazvanie" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="prodagi">
+    <Key>
+      <PropertyRef Name="id_prodag" />
+    </Key>
+    <Property Name="id_prodag" Type="Int32" Nullable="false" />
+    <Property Name="kolichestvo" Type="Int32" Nullable="false" />
+    <Property Name="id_tovar" Type="Int32" Nullable="false" />
+    <Property Name="data_proagi" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="tovar" Relationship="Self.FK_prodagi_tovar" FromRole="prodagi" ToRole="tovar" />
+    <NavigationProperty Name="prodagi_yslyg_client" Relationship="Self.FK_prodagi_yslyg_client_prodagi" FromRole="prodagi" ToRole="prodagi_yslyg_client" />
+  </EntityType>
+  <EntityType Name="prodagi_yslyg_client">
+    <Key>
+      <PropertyRef Name="id_prodag_ys_client" />
+    </Key>
+    <Property Name="id_prodag_ys_client" Type="Int32" Nullable="false" />
+    <Property Name="id_yslyg_client" Type="Int32" Nullable="false" />
+    <Property Name="id_prodag" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="prodagi" Relationship="Self.FK_prodagi_yslyg_client_prodagi" FromRole="prodagi_yslyg_client" ToRole="prodagi" />
+    <NavigationProperty Name="yslygi_client" Relationship="Self.FK_prodagi_yslyg_client_yslygi_client" FromRole="prodagi_yslyg_client" ToRole="yslygi_client" />
+  </EntityType>
+  <EntityType Name="proizvoditel">
+    <Key>
+      <PropertyRef Name="id_proizvod" />
+    </Key>
+    <Property Name="id_proizvod" Type="Int32" Nullable="false" />
+    <Property Name="data_nachala_work" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="nazvanie" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tovar" Relationship="Self.FK_tovar_proizvoditel" FromRole="proizvoditel" ToRole="tovar" />
+  </EntityType>
+  <EntityType Name="sezon">
+    <Key>
+      <PropertyRef Name="id_sezon" />
+    </Key>
+    <Property Name="id_sezon" Type="Int32" Nullable="false" />
+    <Property Name="nazvanie_sezona" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="nachalo_sezona" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="konec_sezona" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="sezonue_tovar" Relationship="Self.FK_sezonue_tovar_sezon" FromRole="sezon" ToRole="sezonue_tovar" />
+  </EntityType>
+  <EntityType Name="sezonue_tovar">
+    <Key>
+      <PropertyRef Name="id_sezonie_tovar" />
+    </Key>
+    <Property Name="id_sezonie_tovar" Type="Int32" Nullable="false" />
+    <Property Name="id_sezon" Type="Int32" Nullable="false" />
+    <Property Name="id_tovar" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="sezon" Relationship="Self.FK_sezonue_tovar_sezon" FromRole="sezonue_tovar" ToRole="sezon" />
+    <NavigationProperty Name="tovar" Relationship="Self.FK_sezonue_tovar_tovar" FromRole="sezonue_tovar" ToRole="tovar" />
+  </EntityType>
+  <EntityType Name="sklad">
+    <Key>
+      <PropertyRef Name="id_sklad" />
+    </Key>
+    <Property Name="id_sklad" Type="Int32" Nullable="false" />
+    <Property Name="kolich_tovarov" Type="Int32" Nullable="false" />
+    <Property Name="id_tovar" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tovar" Relationship="Self.FK_sklad_tovar" FromRole="sklad" ToRole="tovar" />
+  </EntityType>
+  <EntityType Name="sotrudnik">
+    <Key>
+      <PropertyRef Name="id_sotrydnika" />
+    </Key>
+    <Property Name="id_sotrydnika" Type="Int32" Nullable="false" />
+    <Property Name="familiya" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="imya" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="otchestvo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="seriya_pasporta" Type="Int32" Nullable="false" />
+    <Property Name="nomer_pasporta" Type="Int32" Nullable="false" />
+    <Property Name="id_podrazdeleniya" Type="Int32" Nullable="false" />
+    <Property Name="pol" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="koeffic_oplati" Type="Double" Nullable="false" />
+    <Property Name="data_rog" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="id_kategorii" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="kategoriya_sotrudnika" Relationship="Self.FK_sotrudnik_kategoriya_sotrudnika" FromRole="sotrudnik" ToRole="kategoriya_sotrudnika" />
+    <NavigationProperty Name="yslygi_sotrudnika" Relationship="Self.FK_yslygi_sotrudnika_sotrudnik" FromRole="sotrudnik" ToRole="yslygi_sotrudnika" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tip_clienta">
+    <Key>
+      <PropertyRef Name="id_tip" />
+    </Key>
+    <Property Name="id_tip" Type="Int32" Nullable="false" />
+    <Property Name="nazvanie" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="color" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="rasnovidnost" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="client" Relationship="Self.FK_client_tip_clienta" FromRole="tip_clienta" ToRole="client" />
+  </EntityType>
+  <EntityType Name="tovar">
+    <Key>
+      <PropertyRef Name="id_tovar" />
+    </Key>
+    <Property Name="id_tovar" Type="Int32" Nullable="false" />
+    <Property Name="xaracteristika" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="opisanie" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="photo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="naimenovanie" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="kategoriya" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="stoimost" Type="Double" Nullable="false" />
+    <Property Name="paznovidnost" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="visota" Type="Double" Nullable="false" />
+    <Property Name="shirina" Type="Double" Nullable="false" />
+    <Property Name="dlina" Type="Double" Nullable="false" />
+    <Property Name="glavnoe_izobragenie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dop_photo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="id_proizvod" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="complimentarnie_tovar" Relationship="Self.FK_complimentarnie_tovar_tovar" FromRole="tovar" ToRole="complimentarnie_tovar" />
+    <NavigationProperty Name="complimentarnie_tovar1" Relationship="Self.FK_complimentarnie_tovar_tovar1" FromRole="tovar" ToRole="complimentarnie_tovar" />
+    <NavigationProperty Name="prodagi" Relationship="Self.FK_prodagi_tovar" FromRole="tovar" ToRole="prodagi" />
+    <NavigationProperty Name="proizvoditel" Relationship="Self.FK_tovar_proizvoditel" FromRole="tovar" ToRole="proizvoditel" />
+    <NavigationProperty Name="sezonue_tovar" Relationship="Self.FK_sezonue_tovar_tovar" FromRole="tovar" ToRole="sezonue_tovar" />
+    <NavigationProperty Name="sklad" Relationship="Self.FK_sklad_tovar" FromRole="tovar" ToRole="sklad" />
+  </EntityType>
+  <EntityType Name="yslygi">
+    <Key>
+      <PropertyRef Name="id_yslyg" />
+    </Key>
+    <Property Name="id_yslyg" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="naimenovanue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="skidka" Type="Double" />
+    <Property Name="photo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dlitelnost" Type="Int32" Nullable="false" />
+    <Property Name="tcena" Type="Double" Nullable="false" />
+    <NavigationProperty Name="yslygi_client" Relationship="Self.FK_yslygi_client_yslygi" FromRole="yslygi" ToRole="yslygi_client" />
+    <NavigationProperty Name="yslygi_sotrudnika" Relationship="Self.FK_yslygi_sotrudnika_yslygi" FromRole="yslygi" ToRole="yslygi_sotrudnika" />
+  </EntityType>
+  <EntityType Name="yslygi_client">
+    <Key>
+      <PropertyRef Name="id_yslyg_client" />
+    </Key>
+    <Property Name="id_yslyg_client" Type="Int32" Nullable="false" />
+    <Property Name="id_client" Type="Int32" Nullable="false" />
+    <Property Name="id_yslyg" Type="Int32" Nullable="false" />
+    <Property Name="soglasit_client" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="nachalo_okazaniya_ys" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="oplata" Type="Double" />
+    <NavigationProperty Name="client" Relationship="Self.FK_yslygi_client_client" FromRole="yslygi_client" ToRole="client" />
+    <NavigationProperty Name="prodagi_yslyg_client" Relationship="Self.FK_prodagi_yslyg_client_yslygi_client" FromRole="yslygi_client" ToRole="prodagi_yslyg_client" />
+    <NavigationProperty Name="yslygi" Relationship="Self.FK_yslygi_client_yslygi" FromRole="yslygi_client" ToRole="yslygi" />
+  </EntityType>
+  <EntityType Name="yslygi_sotrudnika">
+    <Key>
+      <PropertyRef Name="id_yslyg_sotrudnik" />
+    </Key>
+    <Property Name="id_yslyg_sotrudnik" Type="Int32" Nullable="false" />
+    <Property Name="id_sotrudnik" Type="Int32" Nullable="false" />
+    <Property Name="id_yslyg" Type="Int32" Nullable="false" />
+    <Property Name="data_vremya_yslygi" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="sotrudnik" Relationship="Self.FK_yslygi_sotrudnika_sotrudnik" FromRole="yslygi_sotrudnika" ToRole="sotrudnik" />
+    <NavigationProperty Name="yslygi" Relationship="Self.FK_yslygi_sotrudnika_yslygi" FromRole="yslygi_sotrudnika" ToRole="yslygi" />
+  </EntityType>
+  <Association Name="FK_client_tip_clienta">
+    <End Role="tip_clienta" Type="Self.tip_clienta" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="client" Type="Self.client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tip_clienta">
+        <PropertyRef Name="id_tip" />
+      </Principal>
+      <Dependent Role="client">
+        <PropertyRef Name="id_tip" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_yslygi_client_client">
+    <End Role="client" Type="Self.client" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="yslygi_client" Type="Self.yslygi_client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="client">
+        <PropertyRef Name="id_client" />
+      </Principal>
+      <Dependent Role="yslygi_client">
+        <PropertyRef Name="id_client" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_complimentarnie_tovar_tovar">
+    <End Role="tovar" Type="Self.tovar" Multiplicity="1" />
+    <End Role="complimentarnie_tovar" Type="Self.complimentarnie_tovar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tovar">
+        <PropertyRef Name="id_tovar" />
+      </Principal>
+      <Dependent Role="complimentarnie_tovar">
+        <PropertyRef Name="id_tovar_1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_complimentarnie_tovar_tovar1">
+    <End Role="tovar" Type="Self.tovar" Multiplicity="1" />
+    <End Role="complimentarnie_tovar" Type="Self.complimentarnie_tovar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tovar">
+        <PropertyRef Name="id_tovar" />
+      </Principal>
+      <Dependent Role="complimentarnie_tovar">
+        <PropertyRef Name="id_tovar_2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sotrudnik_kategoriya_sotrudnika">
+    <End Role="kategoriya_sotrudnika" Type="Self.kategoriya_sotrudnika" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sotrudnik" Type="Self.sotrudnik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kategoriya_sotrudnika">
+        <PropertyRef Name="id_kategorii" />
+      </Principal>
+      <Dependent Role="sotrudnik">
+        <PropertyRef Name="id_kategorii" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_prodagi_tovar">
+    <End Role="tovar" Type="Self.tovar" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="prodagi" Type="Self.prodagi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tovar">
+        <PropertyRef Name="id_tovar" />
+      </Principal>
+      <Dependent Role="prodagi">
+        <PropertyRef Name="id_tovar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_prodagi_yslyg_client_prodagi">
+    <End Role="prodagi" Type="Self.prodagi" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="prodagi_yslyg_client" Type="Self.prodagi_yslyg_client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="prodagi">
+        <PropertyRef Name="id_prodag" />
+      </Principal>
+      <Dependent Role="prodagi_yslyg_client">
+        <PropertyRef Name="id_prodag" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_prodagi_yslyg_client_yslygi_client">
+    <End Role="yslygi_client" Type="Self.yslygi_client" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="prodagi_yslyg_client" Type="Self.prodagi_yslyg_client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="yslygi_client">
+        <PropertyRef Name="id_yslyg_client" />
+      </Principal>
+      <Dependent Role="prodagi_yslyg_client">
+        <PropertyRef Name="id_yslyg_client" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tovar_proizvoditel">
+    <End Role="proizvoditel" Type="Self.proizvoditel" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tovar" Type="Self.tovar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proizvoditel">
+        <PropertyRef Name="id_proizvod" />
+      </Principal>
+      <Dependent Role="tovar">
+        <PropertyRef Name="id_proizvod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sezonue_tovar_sezon">
+    <End Role="sezon" Type="Self.sezon" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sezonue_tovar" Type="Self.sezonue_tovar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sezon">
+        <PropertyRef Name="id_sezon" />
+      </Principal>
+      <Dependent Role="sezonue_tovar">
+        <PropertyRef Name="id_sezon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sezonue_tovar_tovar">
+    <End Role="tovar" Type="Self.tovar" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sezonue_tovar" Type="Self.sezonue_tovar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tovar">
+        <PropertyRef Name="id_tovar" />
+      </Principal>
+      <Dependent Role="sezonue_tovar">
+        <PropertyRef Name="id_tovar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sklad_tovar">
+    <End Role="tovar" Type="Self.tovar" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sklad" Type="Self.sklad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tovar">
+        <PropertyRef Name="id_tovar" />
+      </Principal>
+      <Dependent Role="sklad">
+        <PropertyRef Name="id_tovar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_yslygi_sotrudnika_sotrudnik">
+    <End Role="sotrudnik" Type="Self.sotrudnik" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="yslygi_sotrudnika" Type="Self.yslygi_sotrudnika" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sotrudnik">
+        <PropertyRef Name="id_sotrydnika" />
+      </Principal>
+      <Dependent Role="yslygi_sotrudnika">
+        <PropertyRef Name="id_sotrudnik" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_yslygi_client_yslygi">
+    <End Role="yslygi" Type="Self.yslygi" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="yslygi_client" Type="Self.yslygi_client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="yslygi">
+        <PropertyRef Name="id_yslyg" />
+      </Principal>
+      <Dependent Role="yslygi_client">
+        <PropertyRef Name="id_yslyg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_yslygi_sotrudnika_yslygi">
+    <End Role="yslygi" Type="Self.yslygi" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="yslygi_sotrudnika" Type="Self.yslygi_sotrudnika" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="yslygi">
+        <PropertyRef Name="id_yslyg" />
+      </Principal>
+      <Dependent Role="yslygi_sotrudnika">
+        <PropertyRef Name="id_yslyg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BdpracticEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="client" EntityType="Self.client" />
+    <EntitySet Name="complimentarnie_tovar" EntityType="Self.complimentarnie_tovar" />
+    <EntitySet Name="kategoriya_sotrudnika" EntityType="Self.kategoriya_sotrudnika" />
+    <EntitySet Name="kategoriya_tovar" EntityType="Self.kategoriya_tovar" />
+    <EntitySet Name="prodagi" EntityType="Self.prodagi" />
+    <EntitySet Name="prodagi_yslyg_client" EntityType="Self.prodagi_yslyg_client" />
+    <EntitySet Name="proizvoditel" EntityType="Self.proizvoditel" />
+    <EntitySet Name="sezon" EntityType="Self.sezon" />
+    <EntitySet Name="sezonue_tovar" EntityType="Self.sezonue_tovar" />
+    <EntitySet Name="sklad" EntityType="Self.sklad" />
+    <EntitySet Name="sotrudnik" EntityType="Self.sotrudnik" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="tip_clienta" EntityType="Self.tip_clienta" />
+    <EntitySet Name="tovar" EntityType="Self.tovar" />
+    <EntitySet Name="yslygi" EntityType="Self.yslygi" />
+    <EntitySet Name="yslygi_client" EntityType="Self.yslygi_client" />
+    <EntitySet Name="yslygi_sotrudnika" EntityType="Self.yslygi_sotrudnika" />
+    <AssociationSet Name="FK_client_tip_clienta" Association="Self.FK_client_tip_clienta">
+      <End Role="tip_clienta" EntitySet="tip_clienta" />
+      <End Role="client" EntitySet="client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_yslygi_client_client" Association="Self.FK_yslygi_client_client">
+      <End Role="client" EntitySet="client" />
+      <End Role="yslygi_client" EntitySet="yslygi_client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_complimentarnie_tovar_tovar" Association="Self.FK_complimentarnie_tovar_tovar">
+      <End Role="tovar" EntitySet="tovar" />
+      <End Role="complimentarnie_tovar" EntitySet="complimentarnie_tovar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_complimentarnie_tovar_tovar1" Association="Self.FK_complimentarnie_tovar_tovar1">
+      <End Role="tovar" EntitySet="tovar" />
+      <End Role="complimentarnie_tovar" EntitySet="complimentarnie_tovar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sotrudnik_kategoriya_sotrudnika" Association="Self.FK_sotrudnik_kategoriya_sotrudnika">
+      <End Role="kategoriya_sotrudnika" EntitySet="kategoriya_sotrudnika" />
+      <End Role="sotrudnik" EntitySet="sotrudnik" />
+    </AssociationSet>
+    <AssociationSet Name="FK_prodagi_tovar" Association="Self.FK_prodagi_tovar">
+      <End Role="tovar" EntitySet="tovar" />
+      <End Role="prodagi" EntitySet="prodagi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_prodagi_yslyg_client_prodagi" Association="Self.FK_prodagi_yslyg_client_prodagi">
+      <End Role="prodagi" EntitySet="prodagi" />
+      <End Role="prodagi_yslyg_client" EntitySet="prodagi_yslyg_client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_prodagi_yslyg_client_yslygi_client" Association="Self.FK_prodagi_yslyg_client_yslygi_client">
+      <End Role="yslygi_client" EntitySet="yslygi_client" />
+      <End Role="prodagi_yslyg_client" EntitySet="prodagi_yslyg_client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tovar_proizvoditel" Association="Self.FK_tovar_proizvoditel">
+      <End Role="proizvoditel" EntitySet="proizvoditel" />
+      <End Role="tovar" EntitySet="tovar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sezonue_tovar_sezon" Association="Self.FK_sezonue_tovar_sezon">
+      <End Role="sezon" EntitySet="sezon" />
+      <End Role="sezonue_tovar" EntitySet="sezonue_tovar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sezonue_tovar_tovar" Association="Self.FK_sezonue_tovar_tovar">
+      <End Role="tovar" EntitySet="tovar" />
+      <End Role="sezonue_tovar" EntitySet="sezonue_tovar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sklad_tovar" Association="Self.FK_sklad_tovar">
+      <End Role="tovar" EntitySet="tovar" />
+      <End Role="sklad" EntitySet="sklad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_yslygi_sotrudnika_sotrudnik" Association="Self.FK_yslygi_sotrudnika_sotrudnik">
+      <End Role="sotrudnik" EntitySet="sotrudnik" />
+      <End Role="yslygi_sotrudnika" EntitySet="yslygi_sotrudnika" />
+    </AssociationSet>
+    <AssociationSet Name="FK_yslygi_client_yslygi" Association="Self.FK_yslygi_client_yslygi">
+      <End Role="yslygi" EntitySet="yslygi" />
+      <End Role="yslygi_client" EntitySet="yslygi_client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_yslygi_sotrudnika_yslygi" Association="Self.FK_yslygi_sotrudnika_yslygi">
+      <End Role="yslygi" EntitySet="yslygi" />
+      <End Role="yslygi_sotrudnika" EntitySet="yslygi_sotrudnika" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(BdpracticModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(BdpracticModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>
